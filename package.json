@@ -10,7 +10,7 @@
   },
   "scripts": {
     "development": "cp client/index.html static/index.html && NODE_ENV=development webpack && webpack-dev-server --content-base static/ --hot --inline --devtool inline-source-map --history-api-fallback",
-    "production": "rm -rf static/index.html && NODE_ENV=production webpack -p && NODE_ENV=production node app.js",
+    "production": "rm -rf static/index.html && NODE_ENV=production webpack -p && NODE_ENV=production node server/index.js",
     "start": "npm run production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
