@@ -2,7 +2,6 @@
   "name": "adamdgraham-blog",
   "version": "1.0.0",
   "description": "Blog at adamdgraham.com",
-  "main": "app-server.js",
   "babel": {
     "presets": [
       "es2015",
@@ -10,14 +9,16 @@
     ]
   },
   "scripts": {
-    "development": "cp views/index.html public/index.html && NODE_ENV=development webpack && webpack-dev-server --content-base public/ --hot --inline --devtool inline-source-map --history-api-fallback",
-    "production": "rm -rf public/index.html && NODE_ENV=production webpack -p && NODE_ENV=production node app.js",
+    "development": "cp client/index.html static/index.html && NODE_ENV=development webpack && webpack-dev-server --content-base static/ --hot --inline --devtool inline-source-map --history-api-fallback",
+    "production": "rm -rf static/index.html && NODE_ENV=production webpack -p && NODE_ENV=production node app.js",
     "start": "npm run production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adam D. Graham",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "6.9.1",
+    "babel-register": "6.9.0",
     "classnames": "2.2.5",
     "express": "4.14.0",
     "immutable": "3.8.1",
@@ -27,11 +28,13 @@
     "react-dom": "15.2.1",
     "react-redux": "4.4.5",
     "react-router": "2.6.0",
-    "redux": "3.5.2"
+    "redux": "3.5.2",
+    "redux-thunk": "2.1.0"
   },
   "devDependencies": {
     "babel-cli": "6.10.1",
     "babel-core": "6.10.4",
+    "babel-loader": "6.2.4",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.11.1",
     "babel-preset-react-hmre": "1.1.1",
@@ -39,7 +42,8 @@
     "react-hot-loader": "1.3.0",
     "sass-loader": "4.0.0",
     "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1"
+    "webpack-dev-server": "1.14.1",
+    "webpack-hot-middleware": "2.12.1"
   },
   "engines": {
     "node": "6.3.0"

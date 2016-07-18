@@ -1,17 +1,16 @@
-// app-server.js
 import React from 'react';
 import { match, RoutingContext } from 'react-router';
 import ReactDOMServer from 'react-dom/server';
 import express from 'express';
 
 // Routes
-import routes from './routes';
+import routes from '../common/routes';
 
 // Express
 const app = express();
 app.engine('html');
-app.set('views', __dirname + '/views');
-app.use('/', express.static(__dirname + '/public/'));
+//app.set('views', __dirname + '/views');
+app.use('/', express.static(__dirname + '/static/'));
 app.set('port', (process.env.PORT || 3000));
 
 app.get('*', (req, res) => {
