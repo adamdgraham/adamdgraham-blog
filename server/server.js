@@ -3,14 +3,13 @@ import React from 'react';
 import { match, RoutingContext } from 'react-router';
 import ReactDOMServer from 'react-dom/server';
 import express from 'express';
-import hogan from 'hogan-express';
 
 // Routes
 import routes from './routes';
 
 // Express
 const app = express();
-app.engine('html', hogan);
+app.engine('html');
 app.set('views', __dirname + '/views');
 app.use('/', express.static(__dirname + '/public/'));
 app.set('port', (process.env.PORT || 3000));
