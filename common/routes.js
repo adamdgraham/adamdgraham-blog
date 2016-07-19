@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>React Universal Blog</h1>
+        <h1>Adam D. Graham's Blog Party</h1>
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
